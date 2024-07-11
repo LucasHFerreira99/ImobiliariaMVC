@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Página Inicial";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh;
+        }
+
+        .navbar {
+            /* Estilos da navbar */
+            width: 100%;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000; /* Garante que a navbar fique sobre o conteúdo */
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%; /* Largura do container */
+            max-width: 600px; /* Largura máxima do container */
+            margin: auto; /* Centraliza o container */
+        }
+
+        h1 {
+            color: black;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: black;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>@ViewBag.Title</h1>
+        <p>Bem-vindo à página inicial da ImobiliariaMVC!</p>
+    </div>
+</body>
+</html>
