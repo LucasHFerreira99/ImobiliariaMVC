@@ -19,13 +19,11 @@ namespace ImobiliariaMVC.Controllers
             _context = context;
         }
 
-        // GET: Locadors
         public async Task<IActionResult> Index()
         {
             return View(await _context.Locadores.ToListAsync());
         }
 
-        // GET: Locadors/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,15 +41,11 @@ namespace ImobiliariaMVC.Controllers
             return View(locador);
         }
 
-        // GET: Locadors/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Locadors/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Cpf,Telefone,Identidade,Endereco,Atividade")] Locador locador)
@@ -65,7 +59,6 @@ namespace ImobiliariaMVC.Controllers
             return View(locador);
         }
 
-        // GET: Locadors/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,9 +74,6 @@ namespace ImobiliariaMVC.Controllers
             return View(locador);
         }
 
-        // POST: Locadors/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cpf,Telefone,Identidade,Endereco,Atividade")] Locador locador)
@@ -116,7 +106,6 @@ namespace ImobiliariaMVC.Controllers
             return View(locador);
         }
 
-        // GET: Locadors/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +123,6 @@ namespace ImobiliariaMVC.Controllers
             return View(locador);
         }
 
-        // POST: Locadors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
