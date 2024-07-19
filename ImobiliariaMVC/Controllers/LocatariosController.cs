@@ -29,12 +29,12 @@ namespace ImobiliariaMVC.Controllers
 
         public async Task<IActionResult> Editar(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            var locatario = await  _context.Locatarios.FindAsync(id);
-            if(locatario == null)
+            var locatario = await _context.Locatarios.FindAsync(id);
+            if (locatario == null)
             {
                 return NotFound();
             }
@@ -75,12 +75,12 @@ namespace ImobiliariaMVC.Controllers
 
         public async Task<IActionResult> Detalhes(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            var locatario =await _context.Locatarios.FindAsync(id);
-            if(locatario == null)
+            var locatario = await _context.Locatarios.FindAsync(id);
+            if (locatario == null)
             {
                 return NotFound();
             }
@@ -102,6 +102,42 @@ namespace ImobiliariaMVC.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(locatario);
+        }
+
+        public IActionResult Deletar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Locatario locatario = _context.Locatarios.FirstOrDefault(x => x.Id == id);
+            if (locatario == null)
+            {
+                return NotFound();
+            }
+
+            return View(locatario);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeletarConfirmado(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            Locatario locatario = _context.Locatarios.FirstOrDefault(x => x.Id == id);
+
+            if (locatario == null)
+            {
+                return NotFound();
+            }
+
+            _context.Remove(locatario);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
 
