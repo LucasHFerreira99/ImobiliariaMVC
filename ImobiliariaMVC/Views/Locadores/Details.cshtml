@@ -1,10 +1,8 @@
 ﻿@model ImobiliariaMVC.Models.Locador
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
-
-<h1>Details</h1>
 
 <div>
     <h4>Locador</h4>
@@ -49,6 +47,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-success w-25">Editar</a>
+    <a asp-action="Index" class="btn btn-primary w-25">Voltar a listagem</a>
 </div>

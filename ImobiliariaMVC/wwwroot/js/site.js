@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $('#Locatarios').DataTable({
+    $('#Tabelas').DataTable({
         language: {
             "decimal": "",
             "emptyTable": "Não há conteudo disponivel na tabela",

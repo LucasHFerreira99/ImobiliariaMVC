@@ -16,7 +16,7 @@
             <a asp-action="Criar" class="btn btn-primary">Adicionar Novo Locatario</a>
         </div>
     </div>
-    <table id="Locatarios" class="table table-light table-hover mt-3">
+    <table id="Tabelas" class="table table-light table-hover mt-3">
         <thead>
             <tr>
                 <th>@Html.DisplayNameFor(Model => Model.Nome)</th>
@@ -37,9 +37,9 @@
                     <th>@Html.DisplayFor(Model => item.Telefone)</th>
                     <th>@Html.DisplayFor(Model => item.Atividade)</th>
                     <th>
-                        <a asp-action="Editar" asp-route-id="@item.Id">Editar</a>
-                        <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
-                        <a asp-action="Deletar" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Editar" asp-route-id="@item.Id" class="btn btn-success">Editar</a>
+                        <a asp-action="Detalhes" asp-route-id="@item.Id" class="btn btn-warning">Detalhes</a>
+                        <a asp-action="Deletar" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                     </th>
                 </tr>
             }
